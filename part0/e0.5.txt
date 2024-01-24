@@ -1,0 +1,14 @@
+diagram
+    participant browser
+    participant server
+
+    browser ->> server:  GET /notes
+    server  ->> browser: HTML Code
+    browser ->> server:  GET /main.css
+    server  ->> browser: CSS Code
+    browser ->> server:  GET /main.js
+    server  ->> browser: JS Code
+    browser (executes js code)
+    browser ->> server:  GET /data.json
+    server  ->> browser: JSON notes
+    browser (executes event handler)
